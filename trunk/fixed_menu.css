@@ -4,6 +4,18 @@
  * -*- Encoding: utf8n -*-
  */
 
+table.fixedmenu_t1 {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  border-left: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+}
+
 fieldset {
   border: 1px solid #ccc;
   margin: 0 5px 5px 0;

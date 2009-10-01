@@ -324,7 +324,7 @@ FixedMenuJs.getMenuHtml = function() {
   var items = FixedMenuJs.meItems;
   if (!items.length) { return 'No item'; }
 
-  t = '<table>';
+  t = '<table class="fixedmenu_t1">';
   for (var i in items) {
     var o = items[i];
 
@@ -344,7 +344,7 @@ FixedMenuJs.getWpItemHtml = function () {
   //alert(items[0].type_name);
   if (!items.length) { return 'No item'; }
 
-  t = '<table>';
+  t = '<table class="fixedmenu_t1">';
   for (var i in items) {
     var o = items[i];
     //alert(items[i].type);
