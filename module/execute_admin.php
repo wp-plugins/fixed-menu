@@ -270,7 +270,7 @@ function makeContentsHtml ($im) {
     if (!count($im)) {
         return 'No item';
     }
-    $s = '<table>';
+    $s = '<table class="fixedmenu_t1">';
     $n = 0;
     foreach ($im as $num => $w) {
         $s .= '<tr><td>' . $w->type_name . '</td><td>' . $w->type . '</td><td>' . $w->id . '</td><td>' . $w->cssClass . '</td><td>' . $w->str . '</td><td><input type="text" name="menutext_' . $n . '" id="menutext_' . $n . '" value="' . $w->cssClass . '"/></td><td><input type="button" name="addMenuList" value="' . __('Add', 'fixed_menu') . '&gt;" onClick="FixedMenuJs.addMenuList(\'' . $n . '\')" /></td><tr>';
@@ -284,7 +284,7 @@ function makeMenuHtml ($menu) {
     if (!count($menu)) {
         return 'No item';
     }
-    $s = '<table>';
+    $s = '<table class="fixedmenu_t1">';
     $n = 0;
     foreach ($menu as $num => $m) {
         $s .= '<tr><td><input type="button" value="&lt; ' . __('Return', 'fixed_menu') . '" onClick="FixedMenuJs.cancelItem(\'' . $n . '\')" /></td><td>' . $m->type_name . '</td><td>' . $m->type . '</td><td>' . $m->id . '</td><td>' . $m->cssClass . '</td><td>' . $m->str . '</td><td><input type="button" value="Up" onClick="FixedMenuJs.upItem(\'' . $n . '\')" /></td><td><input type="button" value="Down" onClick="FixedMenuJs.downItem(\'' . $n . '\')" /></td></tr>';

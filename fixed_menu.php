@@ -4,7 +4,7 @@ Plugin Name: Fixed Menu
 Plugin URI: http://takeai.silverpigon.jp/
 Description: Making of fixed menu.
 Author: AI.Takeuchi
-Version: 1.0
+Version: 1.1
 Author URI: http://takeai.silverpigeon.jp/
 */
 
@@ -30,7 +30,7 @@ Author URI: http://takeai.silverpigeon.jp/
 
 //load_plugin_textdomain('fixed_menu');
 load_plugin_textdomain( 'fixed_menu',
-		'wp-content/plugins/fixed_menu/lang', 'fixed_menu/lang' );
+		'wp-content/plugins/fixed-menu/lang', 'fixed-menu/lang' );
 
 if (is_admin()) {
     $wpFixedMenu = & new WpFixedMenu();
@@ -174,7 +174,7 @@ class WpFixedMenu {
         $this->plugin_name = 'fixed_menu';
         
         $this->plugin_uri  = get_settings('siteurl');
-        $this->plugin_uri .= '/wp-content/plugins/fixed_menu/';
+        $this->plugin_uri .= '/wp-content/plugins/fixed-menu/';
 
         $this->model = $this->getModelObject();
     }
