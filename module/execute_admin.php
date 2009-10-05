@@ -84,6 +84,8 @@ function save(&$obj, $menuName) {
     $option['qf_getthumb'] = checkInput($qf_getthumb, 'remove_tag');
     $option['qf_getthumb_option'] = checkInput($qf_getthumb_option, 'remove_tag');
     $option['is_enable'] = checkInput($is_enable, 'remove_tag');
+    $option['menu_title'] = checkInput($fixed_menu_title, 'remove_tag');
+    $option['align'] = checkInput($fixed_menu_align, 'remove_tag');
     $model->setOption($menuName, $option);
 
     // home
@@ -241,6 +243,15 @@ function edit(&$obj, $menuName, $msg = '') {
 
       
     <div id="fixed_menu_ctrl">
+    <?php _e('Menu title', 'fixed_menu')?> <input type="text" name="fixed_menu_title" id="fixed_menu_titld" value="<?php echo $option['menu_title'] ?>" size="40" />
+    <?php _e('Align', 'fixed_menu')?> 
+    <select name="fixed_menu_align">
+    <option value="none" <?php if ($option['align'] === 'none') { echo 'selected'; } ?> ><?php _e('None', 'fixed_menu')?></option>
+    <option value="left" <?php if ($option['align'] === 'left') { echo 'selected'; } ?> ><?php _e('Left', 'fixed_menu')?></option>
+    <option value="center" <?php if ($option['align'] === 'center') { echo 'selected'; } ?> ><?php _e('Center', 'fixed_menu')?></option>
+    <option value="right" <?php if ($option['align'] === 'right') { echo 'selected'; } ?> ><?php _e('Right', 'fixed_menu')?></option>
+    </select>
+    <br />
     <input type="button" name="delete" value="<?php _e('Delete this menu', 'fixed_menu')?>" onClick="FixedMenuJs.deleteMenu()" />
     <select name="is_enable">
       <option value="enable" <?php if ($is_enable === 'enable') { echo 'selected'; } ?> ><?php _e('Enabled', 'fixed_menu')?></option>

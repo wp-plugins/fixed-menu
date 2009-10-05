@@ -43,6 +43,20 @@ function fixed_menu($args, $is_echo = false) {
         }
     }
 
+    $align = $option['align'];
+    if ($align === 'none') {
+        $align = '';
+    } else if ($align === 'left') {
+        $align = 'style="float:left;"';
+    } else if ($align === 'center') {
+        $align = 'style="float:center;"';
+    } else if ($align === 'right') {
+        $align = 'style="float:right;"';
+    }
+    $menu_title = $option['menu_title'];
+    if ($menu_title) {
+        $menu_title = '<div class="fixed_menu_title"><span>' . $menu_title . '</span></div>';
+    }
     // GF-GetThumb plug-in
     $qf_getthumb_option = $option['qf_getthumb_option'];
     $qf_getthumb_enable = $option['qf_getthumb'];
@@ -67,8 +81,9 @@ function fixed_menu($args, $is_echo = false) {
     // get current page and category ID
     list($current_type, $current_id) = fixed_menu_get_current($post);
 
-    $m = sprintf("<div id=\"%s\">\n", $div_id_1);
+    $m = sprintf("<div id=\"%s\" %s>\n", $div_id_1, $align);
     $m .= sprintf("  <div id=\"%s\">\n", $div_id_2);
+    $m .= $menu_title;
     $m .= "    <ul>\n";
 
     // make li tag
