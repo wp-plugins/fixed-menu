@@ -10,8 +10,10 @@ function fixed_menu($args, $is_echo = false) {
 
     if (is_array($args)) {
         $menuName = $args['menuname'];
+        $is_shortcode = true;
     } else {
         $menuName = $args;
+        $is_shortcode = false;
     }
 
     // get data object
@@ -55,7 +57,13 @@ function fixed_menu($args, $is_echo = false) {
     }
     $menu_title = $option['menu_title'];
     if ($menu_title) {
-        $menu_title = '<div class="fixed_menu_title"><span>' . $menu_title . '</span></div>';
+        if ($is_shortcode) {
+            $shortcode = " fixed_menu_title_shortcode";
+        } else {
+            $shortcode = " fixed_menu_title_phpcode";
+        }
+        $css_title = ' fixed_menu_title_' . $menuName;
+        $menu_title = '<div class="fixed_menu_title' . $shortcode . $css_title . '"><span>' . $menu_title . '</span></div>';
     }
     // GF-GetThumb plug-in
     $qf_getthumb_option = $option['qf_getthumb_option'];
@@ -67,7 +75,14 @@ function fixed_menu($args, $is_echo = false) {
     
     $div_id_1 = $menuName;
     $div_id_2 = $menuName . '_sub';
-
+    if ($is_shortcode) {
+        $div_class_1 = 'fixed_menu_shortcode';
+        $div_class_2 = 'fixed_menu_shortcode_sub';
+    } else {
+        $div_class_1 = 'fixed_menu';
+        $div_class_2 = 'fixed_menu_sub';
+    }
+    
     // li.class: page-item-%
     //   0: % is string
     //   1: % is number
@@ -81,8 +96,8 @@ function fixed_menu($args, $is_echo = false) {
     // get current page and category ID
     list($current_type, $current_id) = fixed_menu_get_current($post);
 
-    $m = sprintf("<div id=\"%s\" %s>\n", $div_id_1, $align);
-    $m .= sprintf("  <div id=\"%s\">\n", $div_id_2);
+    $m = sprintf("<div id=\"%s\" class=\"%s\" %s>\n", $div_id_1, $div_class_1, $align);
+    $m .= sprintf("  <div id=\"%s\" class=\"%s\">\n", $div_id_2, $div_class_2);
     $m .= $menu_title;
     $m .= "    <ul>\n";
 

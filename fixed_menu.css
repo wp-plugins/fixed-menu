@@ -9,7 +9,8 @@ table.fixedmenu_t1 {
   border-collapse: collapse;
 }
 
-td {
+.fixedmenu_t1 td {
+  padding: 2px;
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #ccc;
   border-left: solid 1px #ddd;
