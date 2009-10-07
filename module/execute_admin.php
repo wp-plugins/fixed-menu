@@ -365,6 +365,7 @@ function getDoc() {
     $str .= "&nbsp; &nbsp; &lt;/div&gt;<br>";
     $str .= "&lt;/div&gt;<br>";
     $str .= "<p>" . __('* For more information, please refer to the actual output', 'fixed_menu') . "</p>";
+    $str .= '<p>Thank you! Q.F. <a href="http://la-passeggiata.com/" target="_blank">QF-GetThumb plugin\'s Homepage</a></p>';
     $str .= "<p># If you notice a my mistake(Program, English...), Please tell me.</p>";
     
     return $str;

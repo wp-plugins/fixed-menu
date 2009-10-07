@@ -4,7 +4,7 @@ Donate link: http://takeai.silverpigeon.jp/
 Tags: menu, link, manually, content, html, image, performance, photo, picture, plugin, url, wordpress
 Requires at least: 2.6
 Tested up to: 2.7
-Stable tag: 1.3
+Stable tag: 1.4
 
 Fixed Menu is a plugin that The user can assemble the menu by himself.
 
@@ -32,6 +32,7 @@ Fixed Menu is plugin to place the assembled menu in theme, sidebar widget and co
 
 Fixed Menu can call QF-GetThumb plugin.
 Thereby display image to menu top, that's beautifull.
+Thank you! Q.F. QF-GetThumb plugin's Homepage: http://la-passeggiata.com/
 QF-GetThumb donate link: http://la-passeggiata.com/sample/sp01/?lang=en
 * Please don't contact creator of QF-GetThumb about Fixed Menu.
 

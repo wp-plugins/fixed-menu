@@ -113,7 +113,7 @@ function fixed_menu($args, $is_echo = false) {
         // Is menu item current page?
         if (fixed_menu_is_current($current_type, $current_id, $item->type, $item->id)) {
             $current = 'current_page_item';
-            $current_a = $current . '_a';
+            $current_a = $current . '_' . $num . '_a';
             $current_name = $name;
         } else if (is_single()) {
             $current = '';
