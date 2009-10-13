@@ -115,7 +115,7 @@ function fixed_menu($args, $is_echo = false) {
             $current = 'current_page_item';
             $current_a = $current . '_' . $num . '_a';
             $current_a .= ' ' . $current . '_a';
-            $current_name = $name;
+            $current_name = $num;
         } else if (is_single()) {
             $current = '';
             $current_a = '';
