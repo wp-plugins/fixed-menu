@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Fixed Menu
-Plugin URI: http://takeai.silverpigon.jp/
+Plugin URI: http://takeai.silverpigeon.jp/
 Description: Making of fixed menu.
 Author: AI.Takeuchi
-Version: 1.6
+Version: 1.61
 Author URI: http://takeai.silverpigeon.jp/
 */
 
