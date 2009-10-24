@@ -96,6 +96,7 @@ function save(&$obj, $menuName) {
 
     // menu
     $args = checkInput($args, 'remove_tag_item');
+    //echo $args;
     $model->setStrToMenu($menuName, $args);
     $obj->updateWpOption($model); // Save database-model
     edit($obj, $menuName, __('Saved', 'fixed_menu'));
@@ -108,7 +109,15 @@ function edit(&$obj, $menuName, $msg = '') {
 
     $model = $obj->model;
     $menu = $model->getMenu($menuName);
+    //
+    foreach ($menu as $i => $value) {
+        if (!$menu[$i]->enable_item) {
+            $menu[$i]->enable_item = 'on';
+        }
+    }
+    //print_r($menu);
     $menu_str = $model->toString($menuName);
+    //print 'menu_str = ' . $menu_str;
     $option = $model->getOption($menuName);
     
     printf("<input type=\"hidden\" name=\"menuName\" value=\"%s\" />", $menuName);
@@ -140,6 +149,7 @@ function edit(&$obj, $menuName, $msg = '') {
     $im[$ic]->str = 'Home';
     $im[$ic]->img = '';
     $im[$ic]->url = '';
+    $im[$ic]->enable_item = 'on';
     $wpItem = $im[$ic]->toString();
     $ic++;
     
@@ -284,7 +294,8 @@ function makeContentsHtml ($im) {
     $s = '<table class="fixedmenu_t1">';
     $n = 0;
     foreach ($im as $num => $w) {
-        $s .= '<tr><td>' . $w->type_name . '</td><td>' . $w->type . '</td><td>' . $w->id . '</td><td>' . $w->cssClass . '</td><td>' . $w->str . '</td><td><input type="text" name="menutext_' . $n . '" id="menutext_' . $n . '" value="' . $w->cssClass . '"/></td><td><input type="button" name="addMenuList" value="' . __('Add', 'fixed_menu') . '&gt;" onClick="FixedMenuJs.addMenuList(\'' . $n . '\')" /></td><tr>';
+        //$s .= '<tr><td>' . $w->type_name . '</td><td>' . $w->type . '</td><td>' . $w->id . '</td><td>' . $w->cssClass . '</td><td>' . $w->str . '</td><td><input type="text" name="menutext_' . $n . '" id="menutext_' . $n . '" value="' . $w->cssClass . '"/></td><td><input type="button" name="addMenuList" value="' . __('Add', 'fixed_menu') . '&gt;" onClick="FixedMenuJs.addMenuList(\'' . $n . '\')" /></td><tr>';
+        $s .= '<tr><td>' . $w->type_name . '</td><td>' . $w->type . '</td><td>' . $w->id . '</td><td>' . $w->str . '</td><td><input type="text" name="menutext_' . $n . '" id="menutext_' . $n . '" value="' . $w->cssClass . '"/></td><td><input type="button" name="addMenuList" value="' . __('Add', 'fixed_menu') . '&gt;" onClick="FixedMenuJs.addMenuList(\'' . $n . '\')" /></td><tr>';
         $n++;
     }
     $s .= '</table>';
@@ -298,7 +309,14 @@ function makeMenuHtml ($menu) {
     $s = '<table class="fixedmenu_t1">';
     $n = 0;
     foreach ($menu as $num => $m) {
-        $s .= '<tr><td><input type="button" value="&lt; ' . __('Return', 'fixed_menu') . '" onClick="FixedMenuJs.cancelItem(\'' . $n . '\')" /></td><td>' . $m->type_name . '</td><td>' . $m->type . '</td><td>' . $m->id . '</td><td>' . $m->cssClass . '</td><td>' . $m->str . '</td><td><input type="button" value="Up" onClick="FixedMenuJs.upItem(\'' . $n . '\')" /></td><td><input type="button" value="Down" onClick="FixedMenuJs.downItem(\'' . $n . '\')" /></td></tr>';
+        //echo 'enable_item = [' . $m->enable_item . ']';
+        //if (!$m->enable_item) { $m->enable_item = 'on'; }
+        if ($m->enable_item === 'off') {
+            $checked = '';
+        } else {
+            $checked = 'checked';
+        }
+        $s .= '<tr><td><input type="button" value="&lt; ' . __('Return', 'fixed_menu') . '" onClick="FixedMenuJs.cancelItem(\'' . $n . '\')" /></td><td>' . $m->type_name . '</td><td>' . $m->type . '</td><td>' . $m->id . '</td><td>' . $m->cssClass . '</td><td>' . $m->str . '</td><td><input type="button" value="Up" onClick="FixedMenuJs.upItem(\'' . $n . '\')" /></td><td><input type="button" value="Down" onClick="FixedMenuJs.downItem(\'' . $n . '\')" /></td><td><input type="checkbox" name="item_on_off_' . $n . '" value="on" onClick="FixedMenuJs.checked(\'' . $n . '\')" '. $checked . ' /></td></tr>';
         $n++;
     }
     $s .= '</table>';

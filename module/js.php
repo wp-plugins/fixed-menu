@@ -26,6 +26,7 @@ FixedMenuJs.item = function () {
   var str; // $post->post_title
   var img; // ''
   var url; // ''
+  var enable_item; // ''
 }; // Don't foget semicolon
 
 
@@ -44,6 +45,7 @@ FixedMenuJs.toItemObj = function (str) {
     item.str = f[4];
     item.img = f[5];
     item.url = f[6];
+    item.enable_item = f[7];
     items[i] = item;
   }
   return items;
@@ -60,8 +62,10 @@ FixedMenuJs.toString = function (obj) {
     s += c.cssClass + '<fs>';
     s += c.str + '<fs>';
     s += c.img + '<fs>';
-    s += c.url;
+    s += c.url + '<fs>';
+    s += c.enable_item;
   }
+  //alert(s);
   return s;
 };
 
@@ -279,6 +283,27 @@ FixedMenuJs.addMenuList_url = function () {
 };
 
 
+FixedMenuJs.checked = function (num) {
+  var f = document.formFixedMenu;
+  var i = num;
+
+  FixedMenuJs.toObj();
+  var items = FixedMenuJs.meItems;
+
+  if (FixedMenuJs.strcmp(items[i].enable_item, 'off') === 0) {
+    items[i].enable_item = 'on';
+  } else {
+    items[i].enable_item = 'off';
+  }
+
+  FixedMenuJs.toStr();
+  html = FixedMenuJs.getWpItemHtml();
+  FixedMenuJs.setInnerHtml('contents_html', html);
+  html = FixedMenuJs.getMenuHtml();
+  FixedMenuJs.setInnerHtml('menu_html', html);
+  
+};
+
 
 FixedMenuJs.upItem = function (num) {
   FixedMenuJs.moveItem('up', num);
@@ -319,6 +344,7 @@ FixedMenuJs.moveItem = function (cmd, num) {
 
 FixedMenuJs.getMenuHtml = function() {
   var f = document.formFixedMenu;
+  var checked;
 
   FixedMenuJs.toObj();
   var items = FixedMenuJs.meItems;
@@ -327,8 +353,13 @@ FixedMenuJs.getMenuHtml = function() {
   t = '<table class="fixedmenu_t1">';
   for (var i in items) {
     var o = items[i];
+    if (FixedMenuJs.strcmp(o.enable_item, 'off') === 0) {
+      checked = '';
+    } else {
+      checked = 'checked';
+    }
 
-    t = t + '<tr><td><input type="button" value="&lt; <?php _e('Return', 'fixed_menu')?>" onClick="FixedMenuJs.cancelItem(\'' + i + '\')" /></td><td>' + o.type_name + '</td><td>' + o.type + '</td><td>' + o.id + '</td><td>' + o.cssClass + '</td><td>' + o.str + '</td><td><input type="button" value="Up" onClick="FixedMenuJs.upItem(\'' + i + '\')" /></td><td><input type="button" value="Down" onClick="FixedMenuJs.downItem(\'' + i + '\')" /></td></tr>';
+    t = t + '<tr><td><input type="button" value="&lt; <?php _e('Return', 'fixed_menu')?>" onClick="FixedMenuJs.cancelItem(\'' + i + '\')" /></td><td>' + o.type_name + '</td><td>' + o.type + '</td><td>' + o.id + '</td><td>' + o.cssClass + '</td><td>' + o.str + '</td><td><input type="button" value="Up" onClick="FixedMenuJs.upItem(\'' + i + '\')" /></td><td><input type="button" value="Down" onClick="FixedMenuJs.downItem(\'' + i + '\')" /></td><td><input type="checkbox" name="item_on_off_' + i + '" value="on" onClick="FixedMenuJs.checked(\'' + i + '\')" ' + checked + ' /></td></tr>';
   }
   t = t + '</table>';
   //alert(t);

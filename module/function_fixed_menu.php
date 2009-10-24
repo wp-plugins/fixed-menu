@@ -103,6 +103,8 @@ function fixed_menu($args, $is_echo = false) {
 
     // make li tag
     foreach ($menu as $num => $item) {
+        if ($item->enable_item === 'off') continue;
+        
         //print_r($item);
         if ($class_item_is_number) {
             $num = $num + 1;

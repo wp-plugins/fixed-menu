@@ -4,7 +4,7 @@ Plugin Name: Fixed Menu
 Plugin URI: http://takeai.silverpigeon.jp/
 Description: Making of fixed menu.
 Author: AI.Takeuchi
-Version: 1.6.1
+Version: 1.6.2
 Author URI: http://takeai.silverpigeon.jp/
 */
 
@@ -59,14 +59,15 @@ class WpFixedItemModel {
     function WpFixedItemModel() {
     }
     function toString() {
-        return sprintf("%s<fs>%s<fs>%s<fs>%s<fs>%s<fs>%s<fs>%s",
+        return sprintf("%s<fs>%s<fs>%s<fs>%s<fs>%s<fs>%s<fs>%s<fs>%s",
                        $this->type_name, // Page, Category, Post, Link
                        $this->type, // page_id, cat, p, url
                        $this->id,
                        $this->cssClass,
                        $this->str,
                        $this->img,
-                       $this->url
+                       $this->url,
+                       $this->enable_item
                        );
     }
     function toModel($str) {
@@ -78,6 +79,7 @@ class WpFixedItemModel {
         $this->str = $f[4];
         $this->img = $f[5];
         $this->url = $f[6];
+        $this->enable_item = $f[7];
     }
 }
 class WpFixedMenuModel {
