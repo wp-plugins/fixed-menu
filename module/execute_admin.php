@@ -68,6 +68,36 @@ function delete(&$obj, $menuName) {
     $obj->updateWpOption($obj->model); // Save
 }
 
+function updateDB ($menu){
+    //print_r($menu);
+
+    //$wpdb = $GLOBALS['wpdb'];
+    global $wpdb;
+
+    foreach ($menu as $i => $item) {
+        if ($item->type_name === 'home') continue;
+        
+        if ($item->enable_item === 'on') {
+            $v = 'publish';
+        } else if ($item->enable_item === 'off') {
+            $v = 'private';
+        } else {
+            continue;
+        }
+
+        $sql = "UPDATE $wpdb->posts SET post_status = '$v' WHERE ID = $item->id;";
+        $wpdb->query($sql);
+        //echo '<p>' . $sql . '</p>';
+        
+        /*
+        $table = $wpdb->posts;
+        $data['post_status'] = $v;
+        $where['ID'] = $item->id;
+        $wpdb->update($table, $data, $where);
+          */
+    }
+}
+
 function save(&$obj, $menuName) {
     //print_r($_REQUEST);
     if (is_array($_REQUEST)) {
@@ -86,6 +116,8 @@ function save(&$obj, $menuName) {
     $option['is_enable'] = checkInput($is_enable, 'remove_tag');
     $option['menu_title'] = checkInput($fixed_menu_title, 'remove_tag');
     $option['align'] = checkInput($fixed_menu_align, 'remove_tag');
+    $option['change_publish_private_post'] = checkInput($change_publish_private_post, 'remove_tag');
+    $option['not_use_span_tag'] = checkInput($not_use_span_tag, 'remove_tag');
     $model->setOption($menuName, $option);
 
     // home
@@ -98,8 +130,12 @@ function save(&$obj, $menuName) {
     $args = checkInput($args, 'remove_tag_item');
     //echo $args;
     $model->setStrToMenu($menuName, $args);
+    if ($change_publish_private_post === 'checked') {
+        $msg .= updateDB($model->getMenu($menuName));
+    }
     $obj->updateWpOption($model); // Save database-model
-    edit($obj, $menuName, __('Saved', 'fixed_menu'));
+    $msg .= __('Saved', 'fixed_menu');
+    edit($obj, $menuName, $msg);
 }
 
 function edit(&$obj, $menuName, $msg = '') {
@@ -245,6 +281,14 @@ function edit(&$obj, $menuName, $msg = '') {
       </div>
     </fieldset>
 
+      
+    <fieldset id="common_setting_f"><legend><?php _e('Others Setting', 'fixed_menu');?></legend>
+      <div class="infield">
+        <input type="checkbox" name="change_publish_private_post" value="checked" <?php echo $option['change_publish_private_post'];?> /><?php _e('Menu item enable/disable changed to the post change publish/private.','fixed_menu');?>
+        <br /><input type="checkbox" name="not_use_span_tag" value="checked" <?php echo $option['not_use_span_tag'];?> /><?php _e('Not use span tag.','fixed_menu');?>
+      </div>
+    </fieldset>
+      
     <fieldset id="qf_getthumb_f"><legend>QF-GetThumb plug-in</legend>
       <div class="infield">
         Option <input type="text" name="qf_getthumb_option" id="qf_getthumb_option" value="<?php echo $option['qf_getthumb_option'] ?>" size="80" /> 
@@ -277,7 +321,6 @@ function edit(&$obj, $menuName, $msg = '') {
         Home String <input type="text" name="home_string" id="home_string" value="<?php echo $model->home_string ?>" />
         <br />Home Image (use to QF-GetThumb plugin) <input type="text" name="home_image" id="home_image" value="<?php echo $model->home_image ?>" />
         <br /><?php _e('How to specify the image of Home item', 'fixed_menu')?><br /><?php _e('Input image location. example: http://example/example.jpg', 'fixed_menu')?> <br /><?php _e('Input contents number. example: page_id=2 or cat=3 or p=4 ...', 'fixed_menu')?>
-      </ul>
       </div>
     </fieldset>
       

@@ -23,6 +23,7 @@ function fixed_menu($args, $is_echo = false) {
 
     $menu = $model->getMenu($menuName);
 
+
     //print_r($menu);
     $option = $wpFixedMenu->model->getOption($menuName);
     $is_enable = $option['is_enable'];
@@ -33,6 +34,14 @@ function fixed_menu($args, $is_echo = false) {
             echo '';
             return;
         }
+    }
+
+    if ($option['not_use_span_tag'] === 'checked') {
+        $span[0] = '';
+        $span[1] = '';
+    } else {
+        $span[0] = '<span>';
+        $span[1] = '</span>';
     }
     
     if ($menu == false) {
@@ -63,7 +72,7 @@ function fixed_menu($args, $is_echo = false) {
             $shortcode = " fixed_menu_title_phpcode";
         }
         $css_title = ' fixed_menu_title_' . $menuName;
-        $menu_title = '<div class="fixed_menu_title' . $shortcode . $css_title . '"><span>' . $menu_title . '</span></div>';
+        $menu_title = '<div class="fixed_menu_title' . $shortcode . $css_title . '">' . $span[0] . $menu_title . $span[1] . '</div>';
     }
     // GF-GetThumb plug-in
     $qf_getthumb_option = $option['qf_getthumb_option'];
@@ -149,7 +158,7 @@ function fixed_menu($args, $is_echo = false) {
                 $img = '';
             }
             $m .= sprintf("<li class=\"page_item page-item-home %s\">", $current);
-            $m .= sprintf("<a class=\"page_item_a page-item-%s-a %s\" href=\"%s/\" title=\"%s\">%s<span>%s</span></a></li>\n", $num, $current_a, get_bloginfo('siteurl'), $num, $img, $model->getHomeString());
+            $m .= sprintf("<a class=\"page_item_a page-item-%s-a %s\" href=\"%s/\" title=\"%s\">%s%s%s%s</a></li>\n", $num, $current_a, get_bloginfo('siteurl'), $num, $img, $span[0], $model->getHomeString(), $span[1]);
         } else if ($item->type === 'url') {
             if ($qf_getthumb_enable) {
                 // call GF-GetThumb plug-in
@@ -158,7 +167,7 @@ function fixed_menu($args, $is_echo = false) {
                 $img = '';
             }
             $m .= sprintf("<li class=\"page_item page-item-%s %s\">", $num, $current);
-            $m .= sprintf("<a class=\"page_item_a page-item-%s-a %s\" href=\"%s\" title=\"%s\">%s<span>%s</span></a></li>\n", $num, $current_a, $item->url, $item->str, $img, $item->str);
+            $m .= sprintf("<a class=\"page_item_a page-item-%s-a %s\" href=\"%s\" title=\"%s\">%s%s%s%s</a></li>\n", $num, $current_a, $item->url, $item->str, $img, $span[0], $item->str, $span[1]);
         } else {
             if ($qf_getthumb_enable) {
                 $post = $p; // global $post;
@@ -168,7 +177,7 @@ function fixed_menu($args, $is_echo = false) {
                 $img = '';
             }
             $m .= sprintf("<li class=\"page_item page-item-%s %s\">", $num, $current);
-            $m .= sprintf("<a class=\"page_item_a page-item-%s-a %s\" href=\"%s/?%s=%s\" title=\"%s\">%s<span>%s</span></a></li>\n", $num, $current_a, get_bloginfo('siteurl'), $item->type, $item->id, $title, $img, $title);
+            $m .= sprintf("<a class=\"page_item_a page-item-%s-a %s\" href=\"%s/?%s=%s\" title=\"%s\">%s%s%s%s</a></li>\n", $num, $current_a, get_bloginfo('siteurl'), $item->type, $item->id, $title, $img, $span[0], $title, $span[1]);
         }
     }
     $m .= "    </ul>\n";
