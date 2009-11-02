@@ -159,6 +159,82 @@ function fixed_menu($args, $is_echo = false) {
             }
             $m .= sprintf("<li class=\"page_item page-item-home %s\">", $current);
             $m .= sprintf("<a class=\"page_item_a page-item-%s-a %s\" href=\"%s/\" title=\"%s\">%s%s%s%s</a></li>\n", $num, $current_a, get_bloginfo('siteurl'), $num, $img, $span[0], $model->getHomeString(), $span[1]);
+        } else if ($item->type === 'other_pages') {
+            $oIDs = array();
+            foreach ($menu as $num => $item) {
+                if ($item->type === 'page_id') {
+                    $oIDs[$item->id] = 1;
+                }
+            }
+            // all page
+            $pages = get_pages();
+            foreach ($pages as $post) {
+                $oID = $post->ID;
+                //$oTitle = $post->post_title;
+                if (array_key_exists($oID, $oIDs)) { continue; }
+                // get post object
+                list($p, $title) = fixed_menu_get_post('page_id', $oID);
+                if ($qf_getthumb_enable) {
+                    $post = $p; // global $post;
+                    // call GF-GetThumb plug-in
+                    $img = the_qf_get_thumb_one($qf_getthumb_option);
+                } else {
+                    $img = '';
+                }
+                $num = 'other_pages_' . $oID;
+                //echo $current_type . ', ' . $current_id;
+                if ($current_type === 'page_id' && $current_id == $oID) {
+                    //echo 'hit!';
+                    $current = 'current_page_item';
+                    $current_a = $current . '_' . $num . '_a';
+                    $current_a .= ' ' . $current . '_a';
+                    $current_name = $num;
+                } else {
+                    $current = '';
+                    $current_a = '';
+                }
+                $m .= sprintf("<li class=\"page_item page-item-%s %s\">", $num, $current);
+                $m .= sprintf("<a class=\"page_item_a page-item-%s-a %s\" href=\"%s/?%s=%s\" title=\"%s\">%s%s%s%s</a></li>\n", $num, $current_a, get_bloginfo('siteurl'), 'page_id', $oID, $title, $img, $span[0], $title, $span[1]);
+            }
+        } else if ($item->type === 'other_cats') {
+            $oIDs = array();
+            if ($option['do_not_show_uncategorized'] === 'checked') {
+                $oIDs[1] = 1; // Uncategorized
+            }
+            foreach ($menu as $num => $item) {
+                if ($item->type === 'cat') {
+                    $oIDs[$item->id] = 1;
+                }
+            }
+            // all category
+            $categories = get_categories();
+            foreach ($categories as $num => $cat) {
+                $oID = $cat->cat_ID;
+                //$oTitle = $cat->cat_name;
+                if (array_key_exists($oID, $oIDs)) { continue; }
+                // get post object
+                list($p, $title) = fixed_menu_get_post('cat', $oID);
+                if ($qf_getthumb_enable) {
+                    $post = $p; // global $post;
+                    // call GF-GetThumb plug-in
+                    $img = the_qf_get_thumb_one($qf_getthumb_option);
+                } else {
+                    $img = '';
+                }
+                $num = 'other_pages_' . $oID;
+                //echo $current_type . ', ' . $current_id;
+                if ($current_type === 'cat' && $current_id == $oID) {
+                    $current = 'current_page_item';
+                    $current_a = $current . '_' . $num . '_a';
+                    $current_a .= ' ' . $current . '_a';
+                    $current_name = $num;
+                } else {
+                    $current = '';
+                    $current_a = '';
+                }
+                $m .= sprintf("<li class=\"page_item page-item-%s %s\">", $num, $current);
+                $m .= sprintf("<a class=\"page_item_a page-item-%s-a %s\" href=\"%s/?%s=%s\" title=\"%s\">%s%s%s%s</a></li>\n", $num, $current_a, get_bloginfo('siteurl'), 'cat', $oID, $title, $img, $span[0], $title, $span[1]);
+            }
         } else if ($item->type === 'url') {
             if ($qf_getthumb_enable) {
                 // call GF-GetThumb plug-in

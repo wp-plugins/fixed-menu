@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fixed Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-31 18:36+0900\n"
+"POT-Creation-Date: 2009-11-02 18:47+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: AI Takeuchi <takeai@silverpigeon.jp>\n"
 "Language-Team: \n"
@@ -58,7 +58,7 @@ msgid "Input link string"
 msgstr "リンク文字を入力してください"
 
 #: fixed-menu-dev/trunk/module/js.php:362
-#: fixed-menu-dev/trunk/module/execute_admin.php:362
+#: fixed-menu-dev/trunk/module/execute_admin.php:387
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:290
 #: fixed-menu-dev/tags/1.0/module/js.php:331
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:290
@@ -69,9 +69,9 @@ msgid "Return"
 msgstr "戻す"
 
 #: fixed-menu-dev/trunk/module/js.php:384
-#: fixed-menu-dev/trunk/module/execute_admin.php:278
-#: fixed-menu-dev/trunk/module/execute_admin.php:341
-#: fixed-menu-dev/trunk/module/execute_admin.php:388
+#: fixed-menu-dev/trunk/module/execute_admin.php:302
+#: fixed-menu-dev/trunk/module/execute_admin.php:366
+#: fixed-menu-dev/trunk/module/execute_admin.php:413
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:230
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:276
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:316
@@ -87,183 +87,187 @@ msgstr "戻す"
 msgid "Add"
 msgstr "追加"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:137
+#: fixed-menu-dev/trunk/module/execute_admin.php:138
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:99
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:99
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:101
 msgid "Saved"
 msgstr "保存しました"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:169
+#: fixed-menu-dev/trunk/module/execute_admin.php:170
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:122
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:122
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:124
 msgid "Be sure to save after editing please."
 msgstr "編集後は必ず保存してください"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:170
+#: fixed-menu-dev/trunk/module/execute_admin.php:171
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:123
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:123
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:125
 msgid "Text box, enter the css class to use the menu item."
 msgstr "テキストボックスにはメニューアイテムの css class で使用する文字列を入力します"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:274
+#: fixed-menu-dev/trunk/module/execute_admin.php:298
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:226
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:226
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:228
 msgid "Add link to menu"
 msgstr "リンクをメニューに追加"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:285
+#: fixed-menu-dev/trunk/module/execute_admin.php:309
 msgid "Others Setting"
 msgstr "その他の設定"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:287
+#: fixed-menu-dev/trunk/module/execute_admin.php:311
 msgid "Menu item enable/disable changed to the post change publish/private."
 msgstr "メニューアイテムの表示・非表示を切り替えたときに、記事を公開・非公開に設定する."
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:288
+#: fixed-menu-dev/trunk/module/execute_admin.php:312
 msgid "Not use span tag."
 msgstr "span タグを使用しない."
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:300
+#: fixed-menu-dev/trunk/module/execute_admin.php:313
+msgid "Don't show Uncategorized in Other categories."
+msgstr "その他の分類で、未分類を表示しない"
+
+#: fixed-menu-dev/trunk/module/execute_admin.php:325
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:246
 msgid "Menu title"
 msgstr "メニュー題名"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:301
+#: fixed-menu-dev/trunk/module/execute_admin.php:326
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:247
 msgid "Align"
 msgstr "表示位置"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:303
+#: fixed-menu-dev/trunk/module/execute_admin.php:328
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:249
 msgid "None"
 msgstr "指定無し"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:304
+#: fixed-menu-dev/trunk/module/execute_admin.php:329
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:250
 msgid "Left"
 msgstr "左"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:305
+#: fixed-menu-dev/trunk/module/execute_admin.php:330
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:251
 msgid "Center"
 msgstr "中央"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:306
+#: fixed-menu-dev/trunk/module/execute_admin.php:331
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:252
 msgid "Right"
 msgstr "右"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:309
+#: fixed-menu-dev/trunk/module/execute_admin.php:334
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:244
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:244
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:255
 msgid "Delete this menu"
 msgstr "このメニューを削除"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:311
+#: fixed-menu-dev/trunk/module/execute_admin.php:336
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:246
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:246
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:257
 msgid "Enabled"
 msgstr "有効"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:312
+#: fixed-menu-dev/trunk/module/execute_admin.php:337
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:247
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:247
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:258
 msgid "Disabled"
 msgstr "無効"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:314
+#: fixed-menu-dev/trunk/module/execute_admin.php:339
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:249
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:249
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:260
 msgid "Use QF-GetThumb plug-in"
 msgstr "QF-GetThumb プラグインを使用する"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:315
+#: fixed-menu-dev/trunk/module/execute_admin.php:340
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:250
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:250
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:261
 msgid "(Can not use plug-in now)"
 msgstr "(現在プラグインは使用できません)"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:316
+#: fixed-menu-dev/trunk/module/execute_admin.php:341
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:251
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:251
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:262
 msgid "Save"
 msgstr "保存"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:319
+#: fixed-menu-dev/trunk/module/execute_admin.php:344
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:254
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:254
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:265
 msgid "Common Setting"
 msgstr "共通設定"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:323
+#: fixed-menu-dev/trunk/module/execute_admin.php:348
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:258
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:258
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:269
 msgid "How to specify the image of Home item"
 msgstr "ホームメニューで使用する画像の指定方法"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:323
+#: fixed-menu-dev/trunk/module/execute_admin.php:348
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:258
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:258
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:269
 msgid "Input image location. example: http://example/example.jpg"
 msgstr "画像の場所を指定する. 例: http://example/example.jpg"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:323
+#: fixed-menu-dev/trunk/module/execute_admin.php:348
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:258
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:258
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:269
 msgid "Input contents number. example: page_id=2 or cat=3 or p=4 ..."
 msgstr "画像のあるコンテンツを指定する. 例: page_id=2 or cat=3 or p=4 ..."
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:371
+#: fixed-menu-dev/trunk/module/execute_admin.php:396
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:299
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:299
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:310
 msgid "Can be used to menu name characters from a-z, A-Z, 0-9, minus and underbar. Can not used underbar and numeric at top, last character minus and underbar too."
 msgstr "メニュー名に使用できる文字は a-z, A-Z 0-9 マイナス, アンダーバーです. 先頭の文字に 数字とマイナスは使えません, 最後の文字にマイナスとアンダーバーは使えません."
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:375
+#: fixed-menu-dev/trunk/module/execute_admin.php:400
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:303
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:303
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:314
 msgid "It menu name is already used"
 msgstr "そのメニュー名は既に使用されています"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:387
+#: fixed-menu-dev/trunk/module/execute_admin.php:412
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:315
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:315
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:326
 msgid "New menu"
 msgstr "メニューの新規作成"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:402
+#: fixed-menu-dev/trunk/module/execute_admin.php:427
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:330
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:330
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:341
 msgid "Embed shortcode in editting contents"
 msgstr "コンテンツ編集でショートコードを埋め込む場合"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:405
+#: fixed-menu-dev/trunk/module/execute_admin.php:430
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:333
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:333
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:344
 msgid "Embed theme, part1"
 msgstr "テーマに埋め込む場合 その1"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:408
-#: fixed-menu-dev/trunk/module/execute_admin.php:416
+#: fixed-menu-dev/trunk/module/execute_admin.php:433
+#: fixed-menu-dev/trunk/module/execute_admin.php:441
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:336
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:344
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:336
@@ -273,8 +277,8 @@ msgstr "テーマに埋め込む場合 その1"
 msgid "Content"
 msgstr "内容"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:410
-#: fixed-menu-dev/trunk/module/execute_admin.php:418
+#: fixed-menu-dev/trunk/module/execute_admin.php:435
+#: fixed-menu-dev/trunk/module/execute_admin.php:443
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:338
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:346
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:338
@@ -284,28 +288,28 @@ msgstr "内容"
 msgid "* Is also a good without div tag"
 msgstr "* div タグの部分は無くてもよいです"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:412
+#: fixed-menu-dev/trunk/module/execute_admin.php:437
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:340
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:340
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:351
 msgid "Embed theme, part2"
 msgstr "テーマに埋め込む場合 その2"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:420
+#: fixed-menu-dev/trunk/module/execute_admin.php:445
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:348
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:348
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:359
 msgid "The menu is printed as follows:"
 msgstr "メニューは下記のように出力されます"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:424
+#: fixed-menu-dev/trunk/module/execute_admin.php:449
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:352
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:352
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:363
 msgid "Menu items"
 msgstr "メニュー項目"
 
-#: fixed-menu-dev/trunk/module/execute_admin.php:428
+#: fixed-menu-dev/trunk/module/execute_admin.php:453
 #: fixed-menu-dev/tags/1.0/module/execute_admin.php:356
 #: fixed-menu-dev/tags/1.1/module/execute_admin.php:356
 #: fixed-menu-dev/tags/1.2/module/execute_admin.php:367

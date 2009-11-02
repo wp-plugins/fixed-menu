@@ -118,6 +118,7 @@ function save(&$obj, $menuName) {
     $option['align'] = checkInput($fixed_menu_align, 'remove_tag');
     $option['change_publish_private_post'] = checkInput($change_publish_private_post, 'remove_tag');
     $option['not_use_span_tag'] = checkInput($not_use_span_tag, 'remove_tag');
+    $option['do_not_show_uncategorized'] = checkInput($do_not_show_uncategorized, 'remove_tag');
     $model->setOption($menuName, $option);
 
     // home
@@ -176,13 +177,36 @@ function edit(&$obj, $menuName, $msg = '') {
     $im = array();//new wpFixedMenuItemModel();
     $ic = 0;
     // Home
-    //$wpItem = 'home,home,home,home,home';
     $im[$ic] = new WpFixedItemModel();
     $im[$ic]->type_name = 'home';
     $im[$ic]->type = 'home';
     $im[$ic]->id = 0;
     $im[$ic]->cssClass = 'home';
     $im[$ic]->str = 'Home';
+    $im[$ic]->img = '';
+    $im[$ic]->url = '';
+    $im[$ic]->enable_item = 'on';
+    $wpItem = $im[$ic]->toString();
+    $ic++;
+    // Other pages
+    $im[$ic] = new WpFixedItemModel();
+    $im[$ic]->type_name = 'other_pages';
+    $im[$ic]->type = 'other_pages';
+    $im[$ic]->id = 0;
+    $im[$ic]->cssClass = 'other_pages';
+    $im[$ic]->str = 'Other pages';
+    $im[$ic]->img = '';
+    $im[$ic]->url = '';
+    $im[$ic]->enable_item = 'on';
+    $wpItem = $im[$ic]->toString();
+    $ic++;
+    // Other categories
+    $im[$ic] = new WpFixedItemModel();
+    $im[$ic]->type_name = 'other_cats';
+    $im[$ic]->type = 'other_cats';
+    $im[$ic]->id = 0;
+    $im[$ic]->cssClass = 'other_cats';
+    $im[$ic]->str = 'Other categories';
     $im[$ic]->img = '';
     $im[$ic]->url = '';
     $im[$ic]->enable_item = 'on';
@@ -286,6 +310,7 @@ function edit(&$obj, $menuName, $msg = '') {
       <div class="infield">
         <input type="checkbox" name="change_publish_private_post" value="checked" <?php echo $option['change_publish_private_post'];?> /><?php _e('Menu item enable/disable changed to the post change publish/private.','fixed_menu');?>
         <br /><input type="checkbox" name="not_use_span_tag" value="checked" <?php echo $option['not_use_span_tag'];?> /><?php _e('Not use span tag.','fixed_menu');?>
+        <br /><input type="checkbox" name="do_not_show_uncategorized" value="checked" <?php echo $option['do_not_show_uncategorized'];?> /><?php _e('Don\'t show Uncategorized in Other categories.','fixed_menu');?>
       </div>
     </fieldset>
       
