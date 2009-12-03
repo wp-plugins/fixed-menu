@@ -54,6 +54,11 @@ function checkInput($str, $type) {
     } else if ($type === 'remove_tag') {
         $str = str_replace('>', '&gt;', $str);
         $str = str_replace('<', '&lt;', $str);
+    } else if ($type === 'exclude') {
+        $str = preg_replace('/[^0-9,]/', '', $str);
+        $str = preg_replace('/,+/', ',', $str);
+        $str = preg_replace('/^,/', '', $str);
+        $str = preg_replace('/,$/', '', $str);
     } else if ($type === 'remove_tag_item') {
         $str = str_replace('>', '&gt;', $str);
         $str = str_replace('<', '&lt;', $str);
@@ -119,6 +124,8 @@ function save(&$obj, $menuName) {
     $option['change_publish_private_post'] = checkInput($change_publish_private_post, 'remove_tag');
     $option['not_use_span_tag'] = checkInput($not_use_span_tag, 'remove_tag');
     $option['do_not_show_uncategorized'] = checkInput($do_not_show_uncategorized, 'remove_tag');
+    $option['exclude_pages'] = checkInput($exclude_pages, 'exclude');
+    $option['exclude_categories'] = checkInput($exclude_categories, 'exclude');
     $model->setOption($menuName, $option);
 
     // home
@@ -311,6 +318,8 @@ function edit(&$obj, $menuName, $msg = '') {
         <input type="checkbox" name="change_publish_private_post" value="checked" <?php echo $option['change_publish_private_post'];?> /><?php _e('Menu item enable/disable changed to the post change publish/private.','fixed_menu');?>
         <br /><input type="checkbox" name="not_use_span_tag" value="checked" <?php echo $option['not_use_span_tag'];?> /><?php _e('Not use span tag.','fixed_menu');?>
         <br /><input type="checkbox" name="do_not_show_uncategorized" value="checked" <?php echo $option['do_not_show_uncategorized'];?> /><?php _e('Don\'t show Uncategorized in Other categories.','fixed_menu');?>
+        <br /><?php _e('Exclude pages','fixed_menu'); ?> <input type="text" name="exclude_pages" id="exclude_pages" value="<?php echo $option['exclude_pages'];?>" size="20" /> <?php _e('(Comma separated)','fixed_menu'); ?>
+        <br /><?php _e('Exclude categories','fixed_menu'); ?> <input type="text" name="exclude_categories" id="exclude_categories" value="<?php echo $option['exclude_categories'];?>" size="20" /> <?php _e('(Comma separated)','fixed_menu'); ?>
       </div>
     </fieldset>
       

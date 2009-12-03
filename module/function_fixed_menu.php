@@ -161,6 +161,10 @@ function fixed_menu($args, $is_echo = false) {
             $m .= sprintf("<a class=\"page_item_a page-item-%s-a %s\" href=\"%s/\" title=\"%s\">%s%s%s%s</a></li>\n", $num, $current_a, get_bloginfo('siteurl'), $num, $img, $span[0], $model->getHomeString(), $span[1]);
         } else if ($item->type === 'other_pages') {
             $oIDs = array();
+            $exclude = split(',', $option['exclude_pages']);
+            foreach ($exclude as $num => $item) {
+                $oIDs[$item] = 1;
+            }
             foreach ($menu as $num => $item) {
                 if ($item->type === 'page_id') {
                     $oIDs[$item->id] = 1;
@@ -198,6 +202,10 @@ function fixed_menu($args, $is_echo = false) {
             }
         } else if ($item->type === 'other_cats') {
             $oIDs = array();
+            $exclude = split(',', $option['exclude_categories']);
+            foreach ($exclude as $num => $item) {
+                $oIDs[$item] = 1;
+            }
             if ($option['do_not_show_uncategorized'] === 'checked') {
                 $oIDs[1] = 1; // Uncategorized
             }

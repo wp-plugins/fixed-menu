@@ -4,7 +4,7 @@ Plugin Name: Fixed Menu
 Plugin URI: http://takeai.silverpigeon.jp/
 Description: Making of fixed menu.
 Author: AI.Takeuchi
-Version: 1.6.4
+Version: 1.6.5
 Author URI: http://takeai.silverpigeon.jp/
 */
 
@@ -111,6 +111,8 @@ class WpFixedMenuModel {
             $this->data[$menuName]['option']['change_publish_private_post'] = '';
             $this->data[$menuName]['option']['not_use_span_tag'] = '';
             $this->data[$menuName]['option']['do_not_show_uncategorized'] = '';
+            $this->data[$menuName]['option']['exclude_pages'] = '';
+            $this->data[$menuName]['option']['exclude_categories'] = '';
             return true;
         }
     }

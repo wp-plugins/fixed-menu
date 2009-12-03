@@ -4,7 +4,7 @@ Donate link: http://takeai.silverpigeon.jp/
 Tags: menu, link, manually, content, html, image, performance, photo, picture, plugin, url, wordpress
 Requires at least: 2.6
 Tested up to: 2.8
-Stable tag: 1.6.4
+Stable tag: 1.6.5
 
 Fixed Menu is a plugin that The user can assemble the menu by himself.
 
