@@ -3,8 +3,8 @@ Contributors: AI.Takeuchi
 Donate link: http://takeai.silverpigeon.jp/
 Tags: menu, link, manually, content, html, image, performance, photo, picture, plugin, url, wordpress
 Requires at least: 2.6
-Tested up to: 2.8
-Stable tag: 1.6.5
+Tested up to: 2.9.1
+Stable tag: 1.6.7
 
 Fixed Menu is a plugin that The user can assemble the menu by himself.
 
@@ -54,15 +54,15 @@ QF-GetThumb donate link: http://la-passeggiata.com/sample/sp01/?lang=en
 (b) Use css class of menu item. Part 1.
 
 <?php fixed_menu('menu1'); ?>
-<div class="<?php echo $current_name; ?>">
+<div class="<?php echo fixed_menu_get_current_name(); ?>">
   Content code
 </div>
 
 (c) Use css class of menu item. part 2.
 
+<div class="<?php echo fixed_menu_get_current_name(); ?>">
 <?php $fm = fixed_menu('menu1', true); ?>
-<div class="<?php echo $current_name; ?>">
-  <?php echo $fm; ?>
+<?php echo $fm; ?>
   Content code
 </div>
 

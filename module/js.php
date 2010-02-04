@@ -8,6 +8,10 @@
  *   http://www.javascriptlint.com/online_lint.php
  */
 
+jQuery(document).ready(function(){
+    //alert('jQuery.ready'); //test
+});
+
 // namespace
 var FixedMenuJs;
 if (typeof FixedMenuJs === 'undefined' || !FixedMenuJs) {

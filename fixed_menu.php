@@ -4,7 +4,7 @@ Plugin Name: Fixed Menu
 Plugin URI: http://takeai.silverpigeon.jp/
 Description: Making of fixed menu.
 Author: AI.Takeuchi
-Version: 1.6.5
+Version: 1.6.7
 Author URI: http://takeai.silverpigeon.jp/
 */
 
@@ -39,6 +39,11 @@ if (is_admin()) {
     // Registration of management screen function.
     add_action('admin_menu', array(&$wpFixedMenu, 'addAdminMenu'));
 } else {
+    //wp_enqueue_script('jQuery', WP_PLUGIN_URL . '/fixed-menu/module/jquery.js', null, '1.3.2');
+    //wp_enqueue_script('jQuery.cookie', WP_PLUGIN_URL . '/fixed-menu/module/jquery.cookie.js', null, null);
+    //wp_enqueue_script('jQuery.droppy', WP_PLUGIN_URL . '/fixed-menu/module/jquery.droppy.js', null, null);
+    require_once('module/add_wp_head.php');
+    add_action('wp_head', 'add_wp_head');
     require_once('module/function_fixed_menu.php');
     add_shortcode('fixed-menu', 'fixed_menu');
     // Can use the short-code in sidebar widget
@@ -113,6 +118,8 @@ class WpFixedMenuModel {
             $this->data[$menuName]['option']['do_not_show_uncategorized'] = '';
             $this->data[$menuName]['option']['exclude_pages'] = '';
             $this->data[$menuName]['option']['exclude_categories'] = '';
+            $this->data[$menuName]['option']['child_cat_depth'] = 0;
+            $this->data[$menuName]['option']['child_page_depth'] = 0;
             return true;
         }
     }

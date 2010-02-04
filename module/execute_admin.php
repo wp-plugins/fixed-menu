@@ -54,6 +54,8 @@ function checkInput($str, $type) {
     } else if ($type === 'remove_tag') {
         $str = str_replace('>', '&gt;', $str);
         $str = str_replace('<', '&lt;', $str);
+    } else if ($type === 'int') {
+        $str = preg_replace('/[^0-9]/', '', $str);
     } else if ($type === 'exclude') {
         $str = preg_replace('/[^0-9,]/', '', $str);
         $str = preg_replace('/,+/', ',', $str);
@@ -126,6 +128,8 @@ function save(&$obj, $menuName) {
     $option['do_not_show_uncategorized'] = checkInput($do_not_show_uncategorized, 'remove_tag');
     $option['exclude_pages'] = checkInput($exclude_pages, 'exclude');
     $option['exclude_categories'] = checkInput($exclude_categories, 'exclude');
+    $option['child_cat_depth'] = checkInput($child_cat_depth, 'int');
+    $option['child_page_depth'] = checkInput($child_page_depth, 'int');
     $model->setOption($menuName, $option);
 
     // home
@@ -214,6 +218,18 @@ function edit(&$obj, $menuName, $msg = '') {
     $im[$ic]->id = 0;
     $im[$ic]->cssClass = 'other_cats';
     $im[$ic]->str = 'Other categories';
+    $im[$ic]->img = '';
+    $im[$ic]->url = '';
+    $im[$ic]->enable_item = 'on';
+    $wpItem = $im[$ic]->toString();
+    $ic++;
+    // RSS feed
+    $im[$ic] = new WpFixedItemModel();
+    $im[$ic]->type_name = 'rss_feed';
+    $im[$ic]->type = 'rss_feed';
+    $im[$ic]->id = 0;
+    $im[$ic]->cssClass = 'rss_feed';
+    $im[$ic]->str = 'RSS Feed';
     $im[$ic]->img = '';
     $im[$ic]->url = '';
     $im[$ic]->enable_item = 'on';
@@ -323,6 +339,19 @@ function edit(&$obj, $menuName, $msg = '') {
       </div>
     </fieldset>
       
+    <fieldset id="qf_getthumb_f"><legend><?php _e('Sort order','fixed_menu'); ?></legend>
+      <div class="infield">
+      </div>
+    </fieldset>
+      
+    <fieldset id="qf_getthumb_f"><legend><?php _e('Sub category/page','fixed_menu'); ?></legend>
+      <div class="infield">
+        <?php _e('Number for limited child category depth','fixed_menu'); ?> <input type="text" name="child_cat_depth" id="child_cat_depth" value="<?php echo $option['child_cat_depth'];?>" size="20" /> <?php _e('(0 to 99)','fixed_menu'); ?>
+        <br /><?php _e('Number for limited child page depth','fixed_menu'); ?> <input type="text" name="child_page_depth" id="child_page_depth" value="<?php echo $option['child_page_depth'];?>" size="20" /> <?php _e('(0 to 99)','fixed_menu'); ?>
+      </div>
+    </fieldset>
+
+      
     <fieldset id="qf_getthumb_f"><legend>QF-GetThumb plug-in</legend>
       <div class="infield">
         Option <input type="text" name="qf_getthumb_option" id="qf_getthumb_option" value="<?php echo $option['qf_getthumb_option'] ?>" size="80" /> 
@@ -352,8 +381,8 @@ function edit(&$obj, $menuName, $msg = '') {
 
     <fieldset id="common_setting_f"><legend><?php _e('Common Setting', 'fixed_menu');?></legend>
       <div class="infield">
-        Home String <input type="text" name="home_string" id="home_string" value="<?php echo $model->home_string ?>" />
-        <br />Home Image (use to QF-GetThumb plugin) <input type="text" name="home_image" id="home_image" value="<?php echo $model->home_image ?>" />
+        <?php _e('Home String','fixed_menu');?> <input type="text" name="home_string" id="home_string" value="<?php echo $model->home_string ?>" />
+        <br /><?php _e('Home Image (use to QF-GetThumb plugin)','fixed_menu');?> <input type="text" name="home_image" id="home_image" value="<?php echo $model->home_image ?>" />
         <br /><?php _e('How to specify the image of Home item', 'fixed_menu')?><br /><?php _e('Input image location. example: http://example/example.jpg', 'fixed_menu')?> <br /><?php _e('Input contents number. example: page_id=2 or cat=3 or p=4 ...', 'fixed_menu')?>
       </div>
     </fieldset>
@@ -438,14 +467,14 @@ function getDoc() {
     
     $str .= "<h3>" . __('Embed theme, part1', 'fixed_menu') . "</h3>";
     $str .= "<p>&lt;?php fixed_menu('_menuName_'); ?&gt;<br>";
-    $str .= "&lt;div class=&quot;&lt;?php echo \$current_name; ?&gt;&quot;&gt;<br>";
+    $str .= "&lt;div class=&quot;&lt;?php echo fixed_menu_get_current_name(); ?&gt;&quot;&gt;<br>";
     $str .= "&nbsp;&nbsp; " . __('Content', 'fixed_menu') . "<br>";
     $str .= "  &lt;/div&gt; </p>";
     $str .= "<p>" . __('* Is also a good without div tag', 'fixed_menu') . "</p>";
     
     $str .= "<h3>" . __('Embed theme, part2', 'fixed_menu') . "</h3>";
-    $str .= "<p>&lt;?php \$fm = fixed_menu('_menuName_', true); ?&gt;<br>";
-    $str .= "&lt;div class=&quot;&lt;?php echo \$current_name; ?&gt;&quot;&gt;<br>";
+    $str .= "<p>&lt;div class=&quot;&lt;?php echo fixed_menu_get_current_name(); ?&gt;&quot;&gt;<br>";
+    $str .= "&lt;?php \$fm = fixed_menu('_menuName_', true); ?&gt;<br>";
     $str .= " &nbsp; &nbsp; &lt;?php echo \$fm; ?&gt;<br>";
     $str .= " &nbsp; &nbsp; " . __('Content', 'fixed_menu') . "<br>";
     $str .= " &lt;/div&gt;</p>";
