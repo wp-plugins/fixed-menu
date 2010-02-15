@@ -130,6 +130,7 @@ function save(&$obj, $menuName) {
     $option['exclude_categories'] = checkInput($exclude_categories, 'exclude');
     $option['child_cat_depth'] = checkInput($child_cat_depth, 'int');
     $option['child_page_depth'] = checkInput($child_page_depth, 'int');
+    $option['toggle_button'] = checkInput($toggle_button, 'remove_tag');
     $model->setOption($menuName, $option);
 
     // home
@@ -332,6 +333,7 @@ function edit(&$obj, $menuName, $msg = '') {
     <fieldset id="common_setting_f"><legend><?php _e('Others Setting', 'fixed_menu');?></legend>
       <div class="infield">
         <input type="checkbox" name="change_publish_private_post" value="checked" <?php echo $option['change_publish_private_post'];?> /><?php _e('Menu item enable/disable changed to the post change publish/private.','fixed_menu');?>
+        <br /><input type="checkbox" name="toggle_button" value="checked" <?php echo $option['toggle_button'];?> /><?php _e('Not use Toggle Button Div.','fixed_menu');?>
         <br /><input type="checkbox" name="not_use_span_tag" value="checked" <?php echo $option['not_use_span_tag'];?> /><?php _e('Not use span tag.','fixed_menu');?>
         <br /><input type="checkbox" name="do_not_show_uncategorized" value="checked" <?php echo $option['do_not_show_uncategorized'];?> /><?php _e('Don\'t show Uncategorized in Other categories.','fixed_menu');?>
         <br /><?php _e('Exclude pages','fixed_menu'); ?> <input type="text" name="exclude_pages" id="exclude_pages" value="<?php echo $option['exclude_pages'];?>" size="20" /> <?php _e('(Comma separated)','fixed_menu'); ?>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fixed Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-05 19:36+0900\n"
+"POT-Creation-Date: 2010-02-15 19:08+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: AI Takeuchi <takeai@silverpigeon.jp>\n"
 "Language-Team: \n"
@@ -15,203 +15,207 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: module/execute_admin.php:149
+#: module/execute_admin.php:150
 msgid "Saved"
 msgstr "保存しました"
 
-#: module/execute_admin.php:181
+#: module/execute_admin.php:182
 msgid "Be sure to save after editing please."
 msgstr "編集後は必ず保存してください"
 
-#: module/execute_admin.php:182
+#: module/execute_admin.php:183
 msgid "Text box, enter the css class to use the menu item."
 msgstr "テキストボックスにはメニューアイテムの css class で使用する文字列を入力します"
 
-#: module/execute_admin.php:309
+#: module/execute_admin.php:322
 msgid "Add link to menu"
 msgstr "リンクをメニューに追加"
 
-#: module/execute_admin.php:313
-#: module/execute_admin.php:392
-#: module/execute_admin.php:439
+#: module/execute_admin.php:326
+#: module/execute_admin.php:406
+#: module/execute_admin.php:453
 #: module/js.php:388
 msgid "Add"
 msgstr "追加"
 
-#: module/execute_admin.php:320
+#: module/execute_admin.php:333
 msgid "Others Setting"
 msgstr "その他の設定"
 
-#: module/execute_admin.php:322
+#: module/execute_admin.php:335
 msgid "Menu item enable/disable changed to the post change publish/private."
 msgstr "メニューアイテムの表示・非表示を切り替えたときに、記事を公開・非公開に設定する."
 
-#: module/execute_admin.php:323
+#: module/execute_admin.php:336
+msgid "Not use Toggle Button Div."
+msgstr "トグルボタン用 div タグを出力しない"
+
+#: module/execute_admin.php:337
 msgid "Not use span tag."
 msgstr "span タグを使用しない."
 
-#: module/execute_admin.php:324
+#: module/execute_admin.php:338
 msgid "Don't show Uncategorized in Other categories."
 msgstr "その他の分類で、未分類を表示しない"
 
-#: module/execute_admin.php:325
+#: module/execute_admin.php:339
 msgid "Exclude pages"
 msgstr "除くページ"
 
-#: module/execute_admin.php:325
-#: module/execute_admin.php:326
+#: module/execute_admin.php:339
+#: module/execute_admin.php:340
 msgid "(Comma separated)"
 msgstr "(コンマ区切り)"
 
-#: module/execute_admin.php:326
+#: module/execute_admin.php:340
 msgid "Exclude categories"
 msgstr "除くカテゴリー"
 
-#: module/execute_admin.php:330
+#: module/execute_admin.php:344
 msgid "Sort order"
 msgstr "並び順"
 
-#: module/execute_admin.php:335
+#: module/execute_admin.php:349
 msgid "Sub category/page"
 msgstr "サブ・カテゴリー／ページ"
 
-#: module/execute_admin.php:337
+#: module/execute_admin.php:351
 msgid "Number for limited child category depth"
 msgstr "カテゴリーを何階層まで表示するか"
 
-#: module/execute_admin.php:337
-#: module/execute_admin.php:338
+#: module/execute_admin.php:351
+#: module/execute_admin.php:352
 msgid "(0 to 99)"
 msgstr "(0 ～ 99)"
 
-#: module/execute_admin.php:338
+#: module/execute_admin.php:352
 msgid "Number for limited child page depth"
 msgstr "ページを何階層まで表示するか"
 
-#: module/execute_admin.php:351
+#: module/execute_admin.php:365
 msgid "Menu title"
 msgstr "メニュー題名"
 
-#: module/execute_admin.php:352
+#: module/execute_admin.php:366
 msgid "Align"
 msgstr "表示位置"
 
-#: module/execute_admin.php:354
+#: module/execute_admin.php:368
 msgid "None"
 msgstr "指定無し"
 
-#: module/execute_admin.php:355
+#: module/execute_admin.php:369
 msgid "Left"
 msgstr "左"
 
-#: module/execute_admin.php:356
+#: module/execute_admin.php:370
 msgid "Center"
 msgstr "中央"
 
-#: module/execute_admin.php:357
+#: module/execute_admin.php:371
 msgid "Right"
 msgstr "右"
 
-#: module/execute_admin.php:360
+#: module/execute_admin.php:374
 msgid "Delete this menu"
 msgstr "このメニューを削除"
 
-#: module/execute_admin.php:362
+#: module/execute_admin.php:376
 msgid "Enabled"
 msgstr "有効"
 
-#: module/execute_admin.php:363
+#: module/execute_admin.php:377
 msgid "Disabled"
 msgstr "無効"
 
-#: module/execute_admin.php:365
+#: module/execute_admin.php:379
 msgid "Use QF-GetThumb plug-in"
 msgstr "QF-GetThumb プラグインを使用する"
 
-#: module/execute_admin.php:366
+#: module/execute_admin.php:380
 msgid "(Can not use plug-in now)"
 msgstr "(現在プラグインは使用できません)"
 
-#: module/execute_admin.php:367
+#: module/execute_admin.php:381
 msgid "Save"
 msgstr "保存"
 
-#: module/execute_admin.php:370
+#: module/execute_admin.php:384
 msgid "Common Setting"
 msgstr "共通設定"
 
-#: module/execute_admin.php:372
+#: module/execute_admin.php:386
 msgid "Home String"
 msgstr "Home に表示する文字"
 
-#: module/execute_admin.php:373
+#: module/execute_admin.php:387
 msgid "Home Image (use to QF-GetThumb plugin)"
 msgstr "QF-GetThumb プラグインで Home に使用するサムネイル画像"
 
-#: module/execute_admin.php:374
+#: module/execute_admin.php:388
 msgid "How to specify the image of Home item"
 msgstr "ホームメニューで使用する画像の指定方法"
 
-#: module/execute_admin.php:374
+#: module/execute_admin.php:388
 msgid "Input image location. example: http://example/example.jpg"
 msgstr "画像の場所を指定する. 例: http://example/example.jpg"
 
-#: module/execute_admin.php:374
+#: module/execute_admin.php:388
 msgid "Input contents number. example: page_id=2 or cat=3 or p=4 ..."
 msgstr "画像のあるコンテンツを指定する. 例: page_id=2 or cat=3 or p=4 ..."
 
-#: module/execute_admin.php:413
+#: module/execute_admin.php:427
 #: module/js.php:366
 msgid "Return"
 msgstr "戻す"
 
-#: module/execute_admin.php:422
+#: module/execute_admin.php:436
 msgid "Can be used to menu name characters from a-z, A-Z, 0-9, minus and underbar. Can not used underbar and numeric at top, last character minus and underbar too."
 msgstr "メニュー名に使用できる文字は a-z, A-Z 0-9 マイナス, アンダーバーです. 先頭の文字に 数字とマイナスは使えません, 最後の文字にマイナスとアンダーバーは使えません."
 
-#: module/execute_admin.php:426
+#: module/execute_admin.php:440
 msgid "It menu name is already used"
 msgstr "そのメニュー名は既に使用されています"
 
-#: module/execute_admin.php:438
+#: module/execute_admin.php:452
 msgid "New menu"
 msgstr "メニューの新規作成"
 
-#: module/execute_admin.php:453
+#: module/execute_admin.php:467
 msgid "Embed shortcode in editting contents"
 msgstr "コンテンツ編集でショートコードを埋め込む場合"
 
-#: module/execute_admin.php:456
+#: module/execute_admin.php:470
 msgid "Embed theme, part1"
 msgstr "テーマに埋め込む場合 その1"
 
-#: module/execute_admin.php:459
-#: module/execute_admin.php:467
+#: module/execute_admin.php:473
+#: module/execute_admin.php:481
 msgid "Content"
 msgstr "内容"
 
-#: module/execute_admin.php:461
-#: module/execute_admin.php:469
+#: module/execute_admin.php:475
+#: module/execute_admin.php:483
 msgid "* Is also a good without div tag"
 msgstr "* div タグの部分は無くてもよいです"
 
-#: module/execute_admin.php:463
+#: module/execute_admin.php:477
 msgid "Embed theme, part2"
 msgstr "テーマに埋め込む場合 その2"
 
-#: module/execute_admin.php:471
+#: module/execute_admin.php:485
 msgid "The menu is printed as follows:"
 msgstr "メニューは下記のように出力されます"
 
-#: module/execute_admin.php:475
+#: module/execute_admin.php:489
 msgid "Menu items"
 msgstr "メニュー項目"
 
-#: module/execute_admin.php:479
+#: module/execute_admin.php:493
 msgid "* For more information, please refer to the actual output"
 msgstr "* 詳しくは実際の出力をご覧下さい"
 
-#: module/function_fixed_menu.php:41
+#: module/function_fixed_menu.php:117
 #: module/_tilde02/Rs[ `
 #: function_fixed_menu.php:41
 #: module/_tilde03/Rs[

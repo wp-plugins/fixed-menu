@@ -397,11 +397,13 @@ function get_li_else($item_type, $item_id, $option, $p, $num, $current, $current
     
 
     $m .= sprintf("<li class=\"page_item page-item-%s %s\">", $num, $current);
-    if (($sub_cats && $nest_level + 1 <= $child_cat_depth) ||
-        ($sub_pages && $nest_level + 1 <= $child_page_depth)) {
-        $m .= '<div class="fixed-menu-toggle-button"></div>';
-    } else {
-        $m .= '<div class="fixed-menu-no-toggle-button"></div>';
+    if (!$option['toggle_button']) {
+        if (($sub_cats && $nest_level + 1 <= $child_cat_depth) ||
+            ($sub_pages && $nest_level + 1 <= $child_page_depth)) {
+            $m .= '<div class="fixed-menu-toggle-button"></div>';
+        } else {
+            $m .= '<div class="fixed-menu-no-toggle-button"></div>';
+        }
     }
     /*
     if ($img) {
