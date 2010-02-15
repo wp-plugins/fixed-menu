@@ -529,7 +529,9 @@ function get_li_home($model, $option, $num, $current, $current_a, $span) {
         $img = '';
     }
     $m .= sprintf("<li class=\"page_item page-item-home %s\">", $current);
-    $m .= '<div class="fixed-menu-no-toggle-button"></div>';
+    if (!$option['toggle_button']) {
+        $m .= '<div class="fixed-menu-no-toggle-button"></div>';
+    }
     $m .= sprintf("<a class=\"page_item_a page-item-%s-a %s\" href=\"%s/\" title=\"%s\">%s%s%s%s</a></li>\n", $num, $current_a, get_bloginfo('siteurl'), $num, $img, $span[0], $model->getHomeString(), $span[1]);
     return $m;
 }
