@@ -4,7 +4,7 @@ Donate link: http://takeai.silverpigeon.jp/
 Tags: menu, link, manually, content, html, image, performance, photo, picture, plugin, url, wordpress
 Requires at least: 2.6
 Tested up to: 2.9.1
-Stable tag: 1.6.8
+Stable tag: 1.6.9
 
 Fixed Menu is a plugin that The user can assemble the menu by himself.
 
@@ -15,6 +15,13 @@ http://takeai.silverpigeon.jp/
 == Description ==
 
 Fixed Menu is plugin to place the assembled menu in theme, sidebar widget and content (shortcode).
+
+
+= Translators =
+
+* Japanese (ja) - [AI.Takeuchi](http://takeai.silverpigeon.jp/)
+
+If you have created your own language pack, or have an update of an existing one, you can send [gettext PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [me](http://ideasilo.wordpress.com/about/) so that I can bundle it into Fixed Menu. You can [download the latest POT file from here](http://plugins.svn.wordpress.org/fixed-menu/trunk/lang/fixed_menu.pot).
 
 
 == Installation ==
@@ -38,6 +45,10 @@ QF-GetThumb donate link: http://la-passeggiata.com/sample/sp01/?lang=en
 
 
 == Changelog ==
+
+= 1.6.9 =
+* Include language file(pot file).
+* Bug fix.
 
 = 1.6.8 =
 * Add option: 'Not use Toggle Button Div'

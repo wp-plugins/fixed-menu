@@ -1,0 +1,241 @@
+# Translation of the WordPress plugin   by .
+# Copyright (C) 2010 
+# This file is distributed under the same license as the  package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/fixed-menu\n"
+"POT-Creation-Date: 2010-02-17 09:50+0000\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: module/execute_admin.php:150
+msgid "Saved"
+msgstr ""
+
+#: module/execute_admin.php:182
+msgid "Be sure to save after editing please."
+msgstr ""
+
+#: module/execute_admin.php:183
+msgid "Text box, enter the css class to use the menu item."
+msgstr ""
+
+#: module/execute_admin.php:322
+msgid "Add link to menu"
+msgstr ""
+
+#: module/execute_admin.php:326 module/execute_admin.php:406
+#: module/execute_admin.php:453 module/js.php:388
+msgid "Add"
+msgstr ""
+
+#: module/execute_admin.php:333
+msgid "Others Setting"
+msgstr ""
+
+#: module/execute_admin.php:335
+msgid "Menu item enable/disable changed to the post change publish/private."
+msgstr ""
+
+#: module/execute_admin.php:336
+msgid "Not use Toggle Button Div."
+msgstr ""
+
+#: module/execute_admin.php:337
+msgid "Not use span tag."
+msgstr ""
+
+#: module/execute_admin.php:338
+msgid "Don't show Uncategorized in Other categories."
+msgstr ""
+
+#: module/execute_admin.php:339
+msgid "Exclude pages"
+msgstr ""
+
+#: module/execute_admin.php:339 module/execute_admin.php:340
+msgid "(Comma separated)"
+msgstr ""
+
+#: module/execute_admin.php:340
+msgid "Exclude categories"
+msgstr ""
+
+#: module/execute_admin.php:344
+msgid "Sort order"
+msgstr ""
+
+#: module/execute_admin.php:349
+msgid "Sub category/page"
+msgstr ""
+
+#: module/execute_admin.php:351
+msgid "Number for limited child category depth"
+msgstr ""
+
+#: module/execute_admin.php:351 module/execute_admin.php:352
+msgid "(0 to 99)"
+msgstr ""
+
+#: module/execute_admin.php:352
+msgid "Number for limited child page depth"
+msgstr ""
+
+#: module/execute_admin.php:365
+msgid "Menu title"
+msgstr ""
+
+#: module/execute_admin.php:366
+msgid "Align"
+msgstr ""
+
+#: module/execute_admin.php:368
+msgid "None"
+msgstr ""
+
+#: module/execute_admin.php:369
+msgid "Left"
+msgstr ""
+
+#: module/execute_admin.php:370
+msgid "Center"
+msgstr ""
+
+#: module/execute_admin.php:371
+msgid "Right"
+msgstr ""
+
+#: module/execute_admin.php:374
+msgid "Delete this menu"
+msgstr ""
+
+#: module/execute_admin.php:376
+msgid "Enabled"
+msgstr ""
+
+#: module/execute_admin.php:377
+msgid "Disabled"
+msgstr ""
+
+#: module/execute_admin.php:379
+msgid "Use QF-GetThumb plug-in"
+msgstr ""
+
+#: module/execute_admin.php:380
+msgid "(Can not use plug-in now)"
+msgstr ""
+
+#: module/execute_admin.php:381
+msgid "Save"
+msgstr ""
+
+#: module/execute_admin.php:384
+msgid "Common Setting"
+msgstr ""
+
+#: module/execute_admin.php:386
+msgid "Home String"
+msgstr ""
+
+#: module/execute_admin.php:387
+msgid "Home Image (use to QF-GetThumb plugin)"
+msgstr ""
+
+#: module/execute_admin.php:388
+msgid "How to specify the image of Home item"
+msgstr ""
+
+#: module/execute_admin.php:388
+msgid "Input image location. example: http://example/example.jpg"
+msgstr ""
+
+#: module/execute_admin.php:388
+msgid "Input contents number. example: page_id=2 or cat=3 or p=4 ..."
+msgstr ""
+
+#: module/execute_admin.php:427 module/js.php:366
+msgid "Return"
+msgstr ""
+
+#: module/execute_admin.php:436
+msgid ""
+"Can be used to menu name characters from a-z, A-Z, 0-9, minus and underbar. "
+"Can not used underbar and numeric at top, last character minus and underbar "
+"too."
+msgstr ""
+
+#: module/execute_admin.php:440
+msgid "It menu name is already used"
+msgstr ""
+
+#: module/execute_admin.php:452
+msgid "New menu"
+msgstr ""
+
+#: module/execute_admin.php:467
+msgid "Embed shortcode in editting contents"
+msgstr ""
+
+#: module/execute_admin.php:470
+msgid "Embed theme, part1"
+msgstr ""
+
+#: module/execute_admin.php:473 module/execute_admin.php:481
+msgid "Content"
+msgstr ""
+
+#: module/execute_admin.php:475 module/execute_admin.php:483
+msgid "* Is also a good without div tag"
+msgstr ""
+
+#: module/execute_admin.php:477
+msgid "Embed theme, part2"
+msgstr ""
+
+#: module/execute_admin.php:485
+msgid "The menu is printed as follows:"
+msgstr ""
+
+#: module/execute_admin.php:489
+msgid "Menu items"
+msgstr ""
+
+#: module/execute_admin.php:493
+msgid "* For more information, please refer to the actual output"
+msgstr ""
+
+#: module/function_fixed_menu.php:117
+msgid "Fixed Menu: Menu not found or No menu item: "
+msgstr ""
+
+#: module/js.php:168
+msgid "Input new menu name."
+msgstr ""
+
+#: module/js.php:181
+msgid "Remove menu"
+msgstr ""
+
+#: module/js.php:181
+msgid ", Are you sure?"
+msgstr ""
+
+#: module/js.php:213
+msgid "Input menu css class name."
+msgstr ""
+
+#: module/js.php:259
+msgid "Input URL"
+msgstr ""
+
+#: module/js.php:262
+msgid "Input link string"
+msgstr ""
