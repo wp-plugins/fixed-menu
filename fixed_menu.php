@@ -4,7 +4,7 @@ Plugin Name: Fixed Menu
 Plugin URI: http://takeai.silverpigeon.jp/
 Description: Making of fixed menu.
 Author: AI.Takeuchi
-Version: 1.6.9
+Version: 1.7.0
 Author URI: http://takeai.silverpigeon.jp/
 */
 
