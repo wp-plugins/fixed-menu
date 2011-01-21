@@ -3,8 +3,8 @@ Contributors: AI.Takeuchi
 Donate link: http://takeai.silverpigeon.jp/
 Tags: menu, link, manually, content, html, image, performance, photo, picture, plugin, url, wordpress
 Requires at least: 2.6
-Tested up to: 2.9.1
-Stable tag: 1.7.0
+Tested up to: 3.0.4
+Stable tag: 1.7.1
 
 Fixed Menu is a plugin that The user can assemble the menu by himself.
 
@@ -46,12 +46,20 @@ QF-GetThumb donate link: http://la-passeggiata.com/sample/sp01/?lang=en
 
 == Changelog ==
 
+= 1.7.1 =
+* Fix: way to loading jQurey.
+
 = 1.7.0 =
 * Include language file(pot file).
 * Bug fix.
 
 = 1.6.8 =
 * Add option: 'Not use Toggle Button Div'
+
+
+== Screenshots ==
+
+1. screenshot-1.png
 
 
 == Example ==
@@ -87,7 +95,9 @@ QF-GetThumb donate link: http://la-passeggiata.com/sample/sp01/?lang=en
 
 == Others ==
 
-# If you notice a my mistake(Program, English...), Please tell me.
+#I can not speak english very well.
+#I would like you to tell me mistake my English, code and others.
+#thanks.
 Web site: http://takeai.silverpigeon.jp/
 AI.Takeuchi <takeai@silverpigeon.jp>
 
