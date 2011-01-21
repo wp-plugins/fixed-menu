@@ -1,0 +1,255 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fixed Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-15 19:08+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: AI Takeuchi <takeai@silverpigeon.jp>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: module/execute_admin.php:150
+msgid "Saved"
+msgstr "保存しました"
+
+#: module/execute_admin.php:182
+msgid "Be sure to save after editing please."
+msgstr "編集後は必ず保存してください"
+
+#: module/execute_admin.php:183
+msgid "Text box, enter the css class to use the menu item."
+msgstr "テキストボックスにはメニューアイテムの css class で使用する文字列を入力します"
+
+#: module/execute_admin.php:322
+msgid "Add link to menu"
+msgstr "リンクをメニューに追加"
+
+#: module/execute_admin.php:326
+#: module/execute_admin.php:406
+#: module/execute_admin.php:453
+#: module/js.php:388
+msgid "Add"
+msgstr "追加"
+
+#: module/execute_admin.php:333
+msgid "Others Setting"
+msgstr "その他の設定"
+
+#: module/execute_admin.php:335
+msgid "Menu item enable/disable changed to the post change publish/private."
+msgstr "メニューアイテムの表示・非表示を切り替えたときに、記事を公開・非公開に設定する."
+
+#: module/execute_admin.php:336
+msgid "Not use Toggle Button Div."
+msgstr "トグルボタン用 div タグを出力しない"
+
+#: module/execute_admin.php:337
+msgid "Not use span tag."
+msgstr "span タグを使用しない."
+
+#: module/execute_admin.php:338
+msgid "Don't show Uncategorized in Other categories."
+msgstr "その他の分類で、未分類を表示しない"
+
+#: module/execute_admin.php:339
+msgid "Exclude pages"
+msgstr "除くページ"
+
+#: module/execute_admin.php:339
+#: module/execute_admin.php:340
+msgid "(Comma separated)"
+msgstr "(コンマ区切り)"
+
+#: module/execute_admin.php:340
+msgid "Exclude categories"
+msgstr "除くカテゴリー"
+
+#: module/execute_admin.php:344
+msgid "Sort order"
+msgstr "並び順"
+
+#: module/execute_admin.php:349
+msgid "Sub category/page"
+msgstr "サブ・カテゴリー／ページ"
+
+#: module/execute_admin.php:351
+msgid "Number for limited child category depth"
+msgstr "カテゴリーを何階層まで表示するか"
+
+#: module/execute_admin.php:351
+#: module/execute_admin.php:352
+msgid "(0 to 99)"
+msgstr "(0 ～ 99)"
+
+#: module/execute_admin.php:352
+msgid "Number for limited child page depth"
+msgstr "ページを何階層まで表示するか"
+
+#: module/execute_admin.php:365
+msgid "Menu title"
+msgstr "メニュー題名"
+
+#: module/execute_admin.php:366
+msgid "Align"
+msgstr "表示位置"
+
+#: module/execute_admin.php:368
+msgid "None"
+msgstr "指定無し"
+
+#: module/execute_admin.php:369
+msgid "Left"
+msgstr "左"
+
+#: module/execute_admin.php:370
+msgid "Center"
+msgstr "中央"
+
+#: module/execute_admin.php:371
+msgid "Right"
+msgstr "右"
+
+#: module/execute_admin.php:374
+msgid "Delete this menu"
+msgstr "このメニューを削除"
+
+#: module/execute_admin.php:376
+msgid "Enabled"
+msgstr "有効"
+
+#: module/execute_admin.php:377
+msgid "Disabled"
+msgstr "無効"
+
+#: module/execute_admin.php:379
+msgid "Use QF-GetThumb plug-in"
+msgstr "QF-GetThumb プラグインを使用する"
+
+#: module/execute_admin.php:380
+msgid "(Can not use plug-in now)"
+msgstr "(現在プラグインは使用できません)"
+
+#: module/execute_admin.php:381
+msgid "Save"
+msgstr "保存"
+
+#: module/execute_admin.php:384
+msgid "Common Setting"
+msgstr "共通設定"
+
+#: module/execute_admin.php:386
+msgid "Home String"
+msgstr "Home に表示する文字"
+
+#: module/execute_admin.php:387
+msgid "Home Image (use to QF-GetThumb plugin)"
+msgstr "QF-GetThumb プラグインで Home に使用するサムネイル画像"
+
+#: module/execute_admin.php:388
+msgid "How to specify the image of Home item"
+msgstr "ホームメニューで使用する画像の指定方法"
+
+#: module/execute_admin.php:388
+msgid "Input image location. example: http://example/example.jpg"
+msgstr "画像の場所を指定する. 例: http://example/example.jpg"
+
+#: module/execute_admin.php:388
+msgid "Input contents number. example: page_id=2 or cat=3 or p=4 ..."
+msgstr "画像のあるコンテンツを指定する. 例: page_id=2 or cat=3 or p=4 ..."
+
+#: module/execute_admin.php:427
+#: module/js.php:366
+msgid "Return"
+msgstr "戻す"
+
+#: module/execute_admin.php:436
+msgid "Can be used to menu name characters from a-z, A-Z, 0-9, minus and underbar. Can not used underbar and numeric at top, last character minus and underbar too."
+msgstr "メニュー名に使用できる文字は a-z, A-Z 0-9 マイナス, アンダーバーです. 先頭の文字に 数字とマイナスは使えません, 最後の文字にマイナスとアンダーバーは使えません."
+
+#: module/execute_admin.php:440
+msgid "It menu name is already used"
+msgstr "そのメニュー名は既に使用されています"
+
+#: module/execute_admin.php:452
+msgid "New menu"
+msgstr "メニューの新規作成"
+
+#: module/execute_admin.php:467
+msgid "Embed shortcode in editting contents"
+msgstr "コンテンツ編集でショートコードを埋め込む場合"
+
+#: module/execute_admin.php:470
+msgid "Embed theme, part1"
+msgstr "テーマに埋め込む場合 その1"
+
+#: module/execute_admin.php:473
+#: module/execute_admin.php:481
+msgid "Content"
+msgstr "内容"
+
+#: module/execute_admin.php:475
+#: module/execute_admin.php:483
+msgid "* Is also a good without div tag"
+msgstr "* div タグの部分は無くてもよいです"
+
+#: module/execute_admin.php:477
+msgid "Embed theme, part2"
+msgstr "テーマに埋め込む場合 その2"
+
+#: module/execute_admin.php:485
+msgid "The menu is printed as follows:"
+msgstr "メニューは下記のように出力されます"
+
+#: module/execute_admin.php:489
+msgid "Menu items"
+msgstr "メニュー項目"
+
+#: module/execute_admin.php:493
+msgid "* For more information, please refer to the actual output"
+msgstr "* 詳しくは実際の出力をご覧下さい"
+
+#: module/function_fixed_menu.php:117
+#: module/_tilde02/Rs[ `
+#: function_fixed_menu.php:41
+#: module/_tilde03/Rs[
+msgid "Fixed Menu: Menu not found or No menu item: "
+msgstr "Fixed Menu: メニューが見つからないかまたは、メニューにアイテムがありません: "
+
+#: module/js.php:168
+msgid "Input new menu name."
+msgstr "新規作成するメニューの名前を入力してください"
+
+#: module/js.php:181
+msgid "Remove menu"
+msgstr "メニュー"
+
+#: module/js.php:181
+msgid ", Are you sure?"
+msgstr " を削除します。よろしいですか？"
+
+#: module/js.php:213
+msgid "Input menu css class name."
+msgstr "css class 名を入力してください"
+
+#: module/js.php:259
+msgid "Input URL"
+msgstr "URL を入力してください"
+
+#: module/js.php:262
+msgid "Input link string"
+msgstr "リンク文字を入力してください"
+
+#~ msgid "Menu Title"
+#~ msgstr "メニュー題名"
+#~ msgid "Use"
+#~ msgstr "プラグイン"
+#~ msgid " plug-in"
+#~ msgstr "の機能を使用する"
+
